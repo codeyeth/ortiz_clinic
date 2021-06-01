@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Ortiz Skin Clinic V.2</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Ortiz Skin Clinic V.2 Website">
@@ -14,6 +14,8 @@
     <link href="{{ asset ('drpro/plugins/jquery-datepicker/jquery-ui.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{{ asset ('drpro/styles/main_styles.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset ('drpro/styles/responsive.css') }}">
+
+    @livewireStyles
 </head>
 <body>
     <div class="super_container">
@@ -67,6 +69,16 @@
         </div>
         
     </div>
+
+    
+
+    @livewireScripts
+
+    <script>
+        Livewire.on('appointmentSuccess', e => {
+            $('#confirmAppointmentModal').modal('show')
+        })
+    </script>
     
     <script src="{{ asset ('drpro/js/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset ('drpro/styles/bootstrap-4.1.2/popper.js') }}"></script>

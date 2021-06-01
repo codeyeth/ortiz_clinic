@@ -28,7 +28,7 @@
             <div class="header_phone">(02) 546 7861</div>
 
             <!-- Appointment Button -->
-            <div class="button button_1 header_button"><a href="#">Make an Appointment</a></div>
+            <div class="button button_1 header_button"><a href="{{ route('login') }}">Login</a></div>
 
             <!-- Header Social -->
             <div class="social header_social">

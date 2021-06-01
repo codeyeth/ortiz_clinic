@@ -1,5 +1,5 @@
 <div class="newsletter">
-    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ asset('drpro/images/newsletter.jpg') }}" data-speed="0.8"></div>
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ asset('drpro/images/newsletter_2.jpg') }}" data-speed="0.8"></div>
     <div class="container">
         <div class="row">
             <div class="col text-center">
