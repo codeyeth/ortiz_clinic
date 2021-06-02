@@ -40,8 +40,8 @@
                     <div class="footer_location">
                         <div class="footer_title">Our Locations</div>
                         <ul class="locations_list">
-                            @if(count($branchessList) > 0)
-                            @foreach ($branchessList as $branch_list)
+                            @if(count($branchesList) > 0)
+                            @foreach ($branchesList as $branch_list)
                             <li>
                                 <div class="location_title">{{ $branch_list->branch_name }}</div>
                                 <div class="location_text">{!! $branch_list->branch_address !!}</div>

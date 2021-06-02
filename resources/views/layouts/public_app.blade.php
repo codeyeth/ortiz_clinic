@@ -14,7 +14,19 @@
     <link href="{{ asset ('drpro/plugins/jquery-datepicker/jquery-ui.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{{ asset ('drpro/styles/main_styles.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset ('drpro/styles/responsive.css') }}">
-
+    
+    <link rel="stylesheet" type="text/css" href="{{ asset ('drpro/styles/about.css') }}">
+    
+    <link rel="stylesheet" type="text/css" href="{{ asset ('drpro/plugins/image-comparison-slider-master/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset ('drpro/styles/services.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset ('drpro/styles/services_responsive.css') }}">
+    
+    <link rel="stylesheet" type="text/css" href="{{ asset ('drpro/styles/blog.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset ('drpro/styles/blog_responsive.css') }}">
+    
+    <link rel="stylesheet" type="text/css" href="{{ asset ('drpro/styles/contact.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset ('drpro/styles/contact_responsive.css') }}">
+    
     @livewireStyles
 </head>
 <body>
@@ -53,62 +65,73 @@
                     <div class="modal-body">
                         
                         <h5 style="text-align: center;">Ortiz Medical Skin Clinic is Redesigning its Website.</h6>
-                        <h6 style="text-align: center;">Some Content you see is not yet Available or will be Removed in the upcoming Updates.</h6>
-
-                        <br>
-
-                        <h6 style="text-align: center;">If you wish to view the old Website please follow this Link <a href="https://ortizskinclinic.com/ortizproj/public/" target="_blank">Ortiz Skin Clinic</a></h6>
+                            <h6 style="text-align: center;">Some Content you see is not yet Available or will be Removed in the upcoming Updates.</h6>
+                            
+                            <br>
+                            
+                            <h6 style="text-align: center;">If you wish to view the old Website please follow this Link <a href="https://ortizskinclinic.com/ortizproj/public/" target="_blank">Ortiz Skin Clinic</a></h6>
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
                         
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                    
                 </div>
             </div>
+            
         </div>
         
-    </div>
-
-    
-
-    @livewireScripts
-
-    <script>
-        Livewire.on('appointmentSuccess', e => {
-            $('#confirmAppointmentModal').modal('show')
-        })
-    </script>
-    
-    <script src="{{ asset ('drpro/js/jquery-3.2.1.min.js') }}"></script>
-    <script src="{{ asset ('drpro/styles/bootstrap-4.1.2/popper.js') }}"></script>
-    <script src="{{ asset ('drpro/styles/bootstrap-4.1.2/bootstrap.min.js') }}"></script>
-    <script src="{{ asset ('drpro/plugins/greensock/TweenMax.min.js') }}"></script>
-    <script src="{{ asset ('drpro/plugins/greensock/TimelineMax.min.js') }}"></script>
-    <script src="{{ asset ('drpro/plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
-    <script src="{{ asset ('drpro/plugins/greensock/animation.gsap.min.js') }}"></script>
-    <script src="{{ asset ('drpro/plugins/greensock/ScrollToPlugin.min.js') }}"></script>
-    <script src="{{ asset ('drpro/plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
-    <script src="{{ asset ('drpro/plugins/easing/easing.js') }}"></script>
-    <script src="{{ asset ('drpro/plugins/parallax-js-master/parallax.min.js') }}"></script>
-    <script src="{{ asset ('drpro/plugins/jquery-datepicker/jquery-ui.js') }}"></script>
-    <script src="{{ asset ('drpro/js/custom.js') }}"></script>
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+        @livewireScripts
         
-        gtag('config', 'UA-23581568-13');
-    </script>
-    
-    <script>
-        window.onload = function(){
-            $('#modalPromptOnLoad').modal('show');
-        }
-    </script>
-    
-</body>
-</html>
+        <script>
+            //APPOINTMENT SUCCESS CLOSE THE ALERT IN 3 SECONDS
+            Livewire.on('appointmentSuccess', e => {
+                setTimeout(function(){ 
+                    $(".alert").alert('close')
+                }, 3000);
+            })
+        </script>
+        
+        <script src="{{ asset ('drpro/js/jquery-3.2.1.min.js') }}"></script>
+        <script src="{{ asset ('drpro/styles/bootstrap-4.1.2/popper.js') }}"></script>
+        <script src="{{ asset ('drpro/styles/bootstrap-4.1.2/bootstrap.min.js') }}"></script>
+        <script src="{{ asset ('drpro/plugins/greensock/TweenMax.min.js') }}"></script>
+        <script src="{{ asset ('drpro/plugins/greensock/TimelineMax.min.js') }}"></script>
+        <script src="{{ asset ('drpro/plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
+        <script src="{{ asset ('drpro/plugins/greensock/animation.gsap.min.js') }}"></script>
+        <script src="{{ asset ('drpro/plugins/greensock/ScrollToPlugin.min.js') }}"></script>
+        <script src="{{ asset ('drpro/plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
+        <script src="{{ asset ('drpro/plugins/easing/easing.js') }}"></script>
+        <script src="{{ asset ('drpro/plugins/parallax-js-master/parallax.min.js') }}"></script>
+        <script src="{{ asset ('drpro/plugins/jquery-datepicker/jquery-ui.js') }}"></script>
+        
+        <script src="{{ asset ('drpro/js/custom.js') }}"></script>
+        
+        <script src="{{ asset ('drpro/js/about.js') }}"></script>
+        
+        <script src="{{ asset ('drpro/plugins/image-comparison-slider-master/main.js') }}"></script>
+        <script src="{{ asset ('drpro/js/services.js') }}"></script>
+        
+        <script src="{{ asset ('drpro/js/blog.js') }}"></script>
+        
+        <script src="{{ asset ('drpro/js/contact.js') }}"></script>
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'UA-23581568-13');
+        </script>
+        
+        <script>
+            window.onload = function(){
+                $('#modalPromptOnLoad').modal('show');
+            }
+        </script>
+        
+    </body>
+    </html>

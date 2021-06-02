@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Services;
 use DB;
 
-class PublicWelcomePageController extends Controller
+class ContactController extends Controller
 {
     /**
     * Display a listing of the resource.
@@ -18,9 +18,9 @@ class PublicWelcomePageController extends Controller
         $servicesList = DB::table('services')->limit(6)->get();
         $branchesList = DB::table('branches')->limit(2)->get();
         
-        $publicHeader = 'Home';
+        $publicHeader = 'Contact';
         
-        return view('welcome_page')
+        return view('contact')
         ->with('servicesList', $servicesList)
         ->with('branchesList', $branchesList)
         ->with('publicHeader', $publicHeader);

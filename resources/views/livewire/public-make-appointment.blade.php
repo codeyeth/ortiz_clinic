@@ -9,6 +9,13 @@
         }
     </style>
     
+    @if(session('success'))
+    <div class="alert alert-success" role="alert">
+        {!! Str::upper(session('success')) !!} 
+        {{-- This is a primary alert—check it out! --}}
+    </div>
+    @endif
+    
     <form class="intro_form" id="intro_form" wire:submit.prevent="submitAppointment" autocomplete="off">
         @csrf
         

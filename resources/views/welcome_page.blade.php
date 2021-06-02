@@ -127,7 +127,7 @@
                             <!-- Milestone -->
                             <div class="col-md-5 milestone_col">
                                 <div class="milestone">
-                                    <div class="milestone_counter" data-end-value="25">0</div>
+                                    <div class="milestone_counter" data-end-value="50" data-sign-after="+">0</div>
                                     <div class="milestone_text">Services Available</div>
                                 </div>
                             </div>
@@ -224,21 +224,8 @@
 
 <!-- Call to action -->
 
-<div class="cta">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="cta_container d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
-                    <div class="cta_content">
-                        <div class="cta_title">Make your appointment today!</div>
-                        <div class="cta_text">Call us now!</div>
-                    </div>
-                    <div class="cta_phone ml-lg-auto">(02) 546 7861</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@include('inc.calling_number')
+
 
 <!-- Services -->
 
@@ -248,7 +235,7 @@
             <div class="col text-center">
                 <div class="section_title_container">
                     <div class="section_subtitle">This is Ortiz</div>
-                    <div class="section_title"><h2>Our Services</h2></div>
+                    <div class="section_title"><h2>Most Availed Services</h2></div>
                 </div>
             </div>
         </div>
@@ -291,6 +278,31 @@
                     <div class="extra_content">
                         <div class="extra_disc d-flex flex-row align-items-end justify-content-start">
                             <div>30<span>%</span></div>
+                            <div>Discount</div>
+                        </div>
+                        <div class="extra_title">Only in August</div>
+                        <div class="extra_text">
+                            <p>Nulla facilisi. Nulla egestas vel lacus sed interdum. Sed mollis, orci elementum eleifend tempor, nunc libero porttitor tellus.</p>
+                        </div>
+                        <div class="button button_1 extra_link trans_200"><a href="#">read more</a></div>
+                    </div>
+                    <div style="padding-right: 10px;"></div>
+                    <div class="extra_content">
+                        <div class="extra_disc d-flex flex-row align-items-end justify-content-start">
+                            <div>40<span>%</span></div>
+                            <div>Discount</div>
+                        </div>
+                        <div class="extra_title">Only in August</div>
+                        <div class="extra_text">
+                            <p>Nulla facilisi. Nulla egestas vel lacus sed interdum. Sed mollis, orci elementum eleifend tempor, nunc libero porttitor tellus.</p>
+                        </div>
+                        <div class="button button_1 extra_link trans_200"><a href="#">read more</a></div>
+                    </div>
+                    <div style="padding-right: 10px;"></div>
+
+                    <div class="extra_content">
+                        <div class="extra_disc d-flex flex-row align-items-end justify-content-start">
+                            <div>50<span>%</span></div>
                             <div>Discount</div>
                         </div>
                         <div class="extra_title">Only in August</div>

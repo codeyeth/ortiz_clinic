@@ -23,6 +23,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $sidebar = 'Home';
+        $bradcrumb = 'Home';
+
+        return view('home')
+        ->with('sidebar', $sidebar)
+        ->with('bradcrumb', $bradcrumb);
     }
 }

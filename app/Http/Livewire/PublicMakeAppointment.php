@@ -59,6 +59,7 @@ class PublicMakeAppointment extends Component
         
         $this->emit('appointmentSuccess');
         $this->resetContent();
+        session()->flash('success', 'Appointment Successfully Added!');
     }
     
     public function mount(){
