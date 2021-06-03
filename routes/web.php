@@ -26,7 +26,12 @@ Route::get('/news', [App\Http\Controllers\NewsController::class, 'index']);
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index']);
 
 Route::get('/client_testimonial', function () {
-    return view('admin_side/client_testimonial');
+    $sidebar = 'Client Testimonial';
+    $breadcrumb = 'Client Testimonial';
+
+    return view('admin_side/client_testimonial')
+    ->with('sidebar', $sidebar)
+    ->with('breadcrumb', $breadcrumb);
 });
 
 Auth::routes();

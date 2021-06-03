@@ -20,7 +20,6 @@
     </div>
 </div>
 
-
 <div class="intro">
     <div class="container">
         <div class="row">
@@ -111,34 +110,23 @@
                     <div class="owl-carousel owl-theme test_slider">
                         
                         <!-- Slide -->
+                        @if( count($testimonialList) > 0 )
+                        @foreach($testimonialList as $testimonial_list)
                         <div class="owl-item">
                             <div class="test_item text-center">
                                 <div class="test_text">
                                     <p>
-                                        I am really satisfied with my Skin Clinic.
+                                        {{ Str::title($testimonial_list->testimonial) }}
                                     </p>    
                                 </div>
                                 <div class="test_info d-flex flex-row align-items-center justify-content-center">
-                                    <div class="test_image"><img src="images/test.jpg" alt=""></div>
-                                    <div class="test_text">Skip O <span>Client</span></div>
+                                    {{-- <div class="test_image"><img src="{{ asset ('drpro/images/test.jpg') }}" alt=""></div> --}}
+                                    <div class="test_text">{{ $testimonial_list->client_name }} <span> - {{ $testimonial_list->service_purchased }}</span></div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Slide -->
-                        <div class="owl-item">
-                            <div class="test_item text-center">
-                                <div class="test_text">
-                                    <p>
-                                        Thanks Ortiz Medical Skin CLinic! If you aren't sure, always go for Ortiz Medical Skin CLinic. Ortiz Medical Skin CLinic is worth much more than I paid.        
-                                    </p>
-                                </div>
-                                <div class="test_info d-flex flex-row align-items-center justify-content-center">
-                                    <div class="test_image"><img src="images/test.jpg" alt=""></div>
-                                    <div class="test_text">Lazarus B. <span>Client</span></div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+                        @endif
                         
                     </div>
                 </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Services;
+use App\Models\ClientTestimonial;
 use DB;
 
 class AboutUsController extends Controller
@@ -17,13 +18,15 @@ class AboutUsController extends Controller
     {
         $servicesList = DB::table('services')->limit(6)->get();
         $branchesList = DB::table('branches')->limit(2)->get();
+        $testimonialList = DB::table('client_testimonials')->where('is_published', true)->orderBy('id', 'DESC')->limit(5)->get();
 
         $publicHeader = 'About Us';
         
         return view('about_us')
         ->with('servicesList', $servicesList)
         ->with('branchesList', $branchesList)
-        ->with('publicHeader', $publicHeader);
+        ->with('publicHeader', $publicHeader)
+        ->with('testimonialList', $testimonialList);
     }
 
     /**

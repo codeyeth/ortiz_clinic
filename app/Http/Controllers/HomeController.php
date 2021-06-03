@@ -24,10 +24,10 @@ class HomeController extends Controller
     public function index()
     {
         $sidebar = 'Home';
-        $bradcrumb = 'Home';
+        $breadcrumb = 'Home';
 
         return view('home')
         ->with('sidebar', $sidebar)
-        ->with('bradcrumb', $bradcrumb);
+        ->with('breadcrumb', $breadcrumb);
     }
 }

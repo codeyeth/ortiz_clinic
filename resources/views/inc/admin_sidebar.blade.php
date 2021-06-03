@@ -16,9 +16,9 @@
             
             <li class="header">MAIN NAVIGATION</li>
             
-            <li class=""><a href="{{ asset ('/home') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+            <li class="{{ $sidebar == 'Home' ? 'active' : ''}}"><a href="{{ asset ('/home') }}"><i class="fa fa-home"></i> <span>Home</span></a></li>
 
-            <li class=""><a href="{{ asset ('/client_testimonial') }}"><i class="fa fa-dashboard"></i> <span>Client Testimonial</span></a></li>
+            <li class="{{ $sidebar == 'Client Testimonial' ? 'active' : ''}}"><a href="{{ asset ('/client_testimonial') }}"><i class="fa fa-user"></i> <span>Client Testimonial</span></a></li>
             
             <!-- START SIDEBAR REGISTER USER -->
             {{-- @if($sidebar_user == 'active1')
