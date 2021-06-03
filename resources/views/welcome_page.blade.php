@@ -23,7 +23,7 @@
                                     </div>
                                     <div class="home_buttons d-flex flex-row align-items-center justify-content-start">
                                         <div class="button button_1 trans_200"><a href="#">read more</a></div>
-                                        <div class="button button_2 trans_200"><a href="#">make an appointment</a></div>
+                                        <div class="button button_2 trans_200"><a href="{{ asset ('/contact') }}">make an appointment</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="home_buttons d-flex flex-row align-items-center justify-content-start">
                                         <div class="button button_1 trans_200"><a href="#">read more</a></div>
-                                        <div class="button button_2 trans_200"><a href="#">make an appointment</a></div>
+                                        <div class="button button_2 trans_200"><a href="{{ asset ('/contact') }}">make an appointment</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                                     </div>
                                     <div class="home_buttons d-flex flex-row align-items-center justify-content-start">
                                         <div class="button button_1 trans_200"><a href="#">read more</a></div>
-                                        <div class="button button_2 trans_200"><a href="#">make an appointment</a></div>
+                                        <div class="button button_2 trans_200"><a href="{{ asset ('/contact') }}">make an appointment</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -299,7 +299,7 @@
                         <div class="button button_1 extra_link trans_200"><a href="#">read more</a></div>
                     </div>
                     <div style="padding-right: 10px;"></div>
-
+                    
                     <div class="extra_content">
                         <div class="extra_disc d-flex flex-row align-items-end justify-content-start">
                             <div>50<span>%</span></div>

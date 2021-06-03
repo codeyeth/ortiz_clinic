@@ -21,6 +21,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
     folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{ asset ('/admin_template/dist/css/skins/_all-skins.min.css')}}">
+    <link rel="stylesheet" href="{{ asset ('/admin_template/plugins/iCheck/all.css') }}">
     
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -36,6 +37,9 @@
       <!-- Google Font -->
       <link rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+      
+      @livewireStyles
+      
     </head>
     <body class="hold-transition skin-black-light sidebar-mini">
       <div class="wrapper">
@@ -46,7 +50,16 @@
         
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-          @yield('content')
+          
+          @include('inc.breadcrumb')        
+          
+          <section class="content">
+            
+            <div class="row">
+              @yield('content')
+            </div>
+            
+          </div>
         </div>
         <!-- /.content-wrapper -->
         
@@ -86,6 +99,17 @@
         </div>
         <!-- ./wrapper -->
         
+        @livewireScripts
+        
+        <script>
+          //APPOINTMENT SUCCESS CLOSE THE ALERT IN 3 SECONDS
+          Livewire.on('testimonialSuccess', e => {
+              setTimeout(function(){ 
+                  $(".alert").alert('close')
+              }, 3000);
+          })
+      </script>
+        
         <!-- jQuery 3 -->
         <script src="{{ asset ('/admin_template/bower_components/jquery/dist/jquery.min.js')}}"></script>
         <!-- Bootstrap 3.3.7 -->
@@ -111,6 +135,8 @@
         <script src="{{ asset ('/admin_template/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
         <script src="{{ asset ('/admin_template/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
         
+        <script src="{{ asset ('/admin_template/plugins/iCheck/icheck.min.js') }}"></script>
+        
         <!-- page script -->
         <script>
           $(function () {
@@ -127,6 +153,15 @@
             */
           })
         </script>
+        
+        {{-- <script>
+          $(function () {
+            $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+              checkboxClass: 'icheckbox_minimal-blue',
+              radioClass   : 'iradio_minimal-blue'
+            })
+          })
+        </script> --}}
         
       </body>
       </html>

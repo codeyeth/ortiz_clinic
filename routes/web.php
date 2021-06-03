@@ -25,6 +25,10 @@ Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index'
 Route::get('/news', [App\Http\Controllers\NewsController::class, 'index']);
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index']);
 
+Route::get('/client_testimonial', function () {
+    return view('admin_side/client_testimonial');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

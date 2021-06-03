@@ -97,7 +97,7 @@
         <div class="row">
             <div class="col">
                 <div class="section_title_container text-center">
-                    <div class="section_subtitle">This is Dr Pro</div>
+                    <div class="section_subtitle">This is Ortiz</div>
                     <div class="section_title"><h2>Clients Testimonials</h2></div>
                 </div>
             </div>
@@ -114,11 +114,13 @@
                         <div class="owl-item">
                             <div class="test_item text-center">
                                 <div class="test_text">
-                                    <p>Odio ultrices ut. Etiam ac erat ut enim maximus accumsan vel ac nisl. Duis feugiat bibendum orci, non elementum urna vestibulum in. Nulla facilisi. Nulla egestas vel lacus sed interdum. Sed mollis, orci elementum eleifend tempor, nunc libero porttitor tellus, vel pharetra metus dolor.</p>
+                                    <p>
+                                        I am really satisfied with my Skin Clinic.
+                                    </p>    
                                 </div>
                                 <div class="test_info d-flex flex-row align-items-center justify-content-center">
                                     <div class="test_image"><img src="images/test.jpg" alt=""></div>
-                                    <div class="test_text">Maria Williams, <span>Patient</span></div>
+                                    <div class="test_text">Skip O <span>Client</span></div>
                                 </div>
                             </div>
                         </div>
@@ -127,24 +129,13 @@
                         <div class="owl-item">
                             <div class="test_item text-center">
                                 <div class="test_text">
-                                    <p>Odio ultrices ut. Etiam ac erat ut enim maximus accumsan vel ac nisl. Duis feugiat bibendum orci, non elementum urna vestibulum in. Nulla facilisi. Nulla egestas vel lacus sed interdum. Sed mollis, orci elementum eleifend tempor, nunc libero porttitor tellus, vel pharetra metus dolor.</p>
+                                    <p>
+                                        Thanks Ortiz Medical Skin CLinic! If you aren't sure, always go for Ortiz Medical Skin CLinic. Ortiz Medical Skin CLinic is worth much more than I paid.        
+                                    </p>
                                 </div>
                                 <div class="test_info d-flex flex-row align-items-center justify-content-center">
                                     <div class="test_image"><img src="images/test.jpg" alt=""></div>
-                                    <div class="test_text">Maria Williams, <span>Patient</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Slide -->
-                        <div class="owl-item">
-                            <div class="test_item text-center">
-                                <div class="test_text">
-                                    <p>Odio ultrices ut. Etiam ac erat ut enim maximus accumsan vel ac nisl. Duis feugiat bibendum orci, non elementum urna vestibulum in. Nulla facilisi. Nulla egestas vel lacus sed interdum. Sed mollis, orci elementum eleifend tempor, nunc libero porttitor tellus, vel pharetra metus dolor.</p>
-                                </div>
-                                <div class="test_info d-flex flex-row align-items-center justify-content-center">
-                                    <div class="test_image"><img src="images/test.jpg" alt=""></div>
-                                    <div class="test_text">Maria Williams, <span>Patient</span></div>
+                                    <div class="test_text">Lazarus B. <span>Client</span></div>
                                 </div>
                             </div>
                         </div>
