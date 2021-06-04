@@ -114,7 +114,8 @@ class ClientsTestimonial extends Component
         return view('livewire.clients-testimonial', [
             'testimonialList' => ClientTestimonial::where('client_name', 'like', '%'.$this->search.'%')
             ->orWhere('testimonial', 'like', '%'.$this->search.'%')
-            ->orWhere('service_purchased', 'like', '%'.$this->search.'%')->paginate(10),
+            ->orWhere('service_purchased', 'like', '%'.$this->search.'%')
+            ->orderBy('id', 'DESC')->paginate(20),
             'testimonialListCount' => ClientTestimonial::where('client_name', 'like', '%'.$this->search.'%')
             ->orWhere('testimonial', 'like', '%'.$this->search.'%')
             ->orWhere('service_purchased', 'like', '%'.$this->search.'%')->count(),

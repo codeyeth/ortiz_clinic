@@ -25,14 +25,12 @@ Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index'
 Route::get('/news', [App\Http\Controllers\NewsController::class, 'index']);
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index']);
 
-Route::get('/client_testimonial', function () {
-    $sidebar = 'Client Testimonial';
-    $breadcrumb = 'Client Testimonial';
-
-    return view('admin_side/client_testimonial')
-    ->with('sidebar', $sidebar)
-    ->with('breadcrumb', $breadcrumb);
-});
+// ADMINISTRATOR SIDE
+Route::get('/appointment_list', [App\Http\Controllers\AdminAppointmentListController::class, 'index']);
+Route::get('/client_testimonial', [App\Http\Controllers\AdminClientTestimonialController::class, 'index']);
+Route::get('/branch', [App\Http\Controllers\AdminBranchController::class, 'index']);
+Route::get('/services_list', [App\Http\Controllers\AdminServicesController::class, 'index']);
+Route::get('/admin_blog', [App\Http\Controllers\AdminBlogController::class, 'index']);
 
 Auth::routes();
 

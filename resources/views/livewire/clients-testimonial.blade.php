@@ -78,12 +78,12 @@
                             </td>
                             <td> <i> {{ $testimonial_list->created_by }} </i> <br> <b> {{ \Carbon\Carbon::parse($testimonial_list->created_at)->toDayDateTimeString() }} </b> </td>
                             <td>
-                                <button class="btn btn-secondary btn-flat" wire:click="editTestimonial({{ $testimonial_list->id }})" data-toggle="modal" data-target="#createTestimonialModal">
+                                <button class="btn btn-secondary btn-flat" wire:click="editTestimonial({{ $testimonial_list->id }})" data-toggle="modal" data-target="#createTestimonialModal" title="Edit">
                                     <i class="fa fa-pencil"></i>
                                 </button> 
                             </td>
                             <td>
-                                <button class="btn btn-danger btn-flat" wire:click="deleteTestimonial({{ $testimonial_list->id }})"><i class="fa fa-trash"></i></button>
+                                <button class="btn btn-danger btn-flat" wire:click="deleteTestimonial({{ $testimonial_list->id }})" title="Delete"><i class="fa fa-trash"></i></button>
                             </td>
                         </tr>
                         @endforeach

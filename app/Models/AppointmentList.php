@@ -16,6 +16,7 @@ class AppointmentList extends Model
         'branch',
         'service',
         'date',
+        'remarks',
 
         'is_done',
         'is_done_by_id',

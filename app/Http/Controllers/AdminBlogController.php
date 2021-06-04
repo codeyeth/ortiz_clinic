@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class AdminBlogController extends Controller
 {
     /**
     * Create a new controller instance.
@@ -23,10 +23,10 @@ class HomeController extends Controller
     */
     public function index()
     {
-        $sidebar = 'Home';
-        $breadcrumb = 'Home';
+        $sidebar = 'Blog/News';
+        $breadcrumb = 'Blog/News';
         
-        return view('home')
+        return view('admin_side/admin_blog')
         ->with('sidebar', $sidebar)
         ->with('breadcrumb', $breadcrumb);
     }

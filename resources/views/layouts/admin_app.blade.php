@@ -100,15 +100,9 @@
         <!-- ./wrapper -->
         
         @livewireScripts
-        
-        <script>
-          //APPOINTMENT SUCCESS CLOSE THE ALERT IN 3 SECONDS
-          Livewire.on('testimonialSuccess', e => {
-              setTimeout(function(){ 
-                  $(".alert").alert('close')
-              }, 3000);
-          })
-      </script>
+
+        @include('livewire_scripts.clients_testimonial_script')        
+        @include('livewire_scripts.appointment_list_script')
         
         <!-- jQuery 3 -->
         <script src="{{ asset ('/admin_template/bower_components/jquery/dist/jquery.min.js')}}"></script>

@@ -17,58 +17,16 @@
             <li class="header">MAIN NAVIGATION</li>
             
             <li class="{{ $sidebar == 'Home' ? 'active' : ''}}"><a href="{{ asset ('/home') }}"><i class="fa fa-home"></i> <span>Home</span></a></li>
-
+            
             <li class="{{ $sidebar == 'Client Testimonial' ? 'active' : ''}}"><a href="{{ asset ('/client_testimonial') }}"><i class="fa fa-user"></i> <span>Client Testimonial</span></a></li>
             
-            <!-- START SIDEBAR REGISTER USER -->
-            {{-- @if($sidebar_user == 'active1')
-            <li class="active treeview">
-                <a href="#">
-                    <i class="fa fa-th"></i> <span>User Management</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li class="active"><a href="/admin_add_user/add_user"><i class="fa fa-circle-o"></i> Add User </a></li>
-                    <li><a href="/admin_add_user/edit_delete_user"><i class="fa fa-circle-o"></i> Edit/Delete User</a></li>
-                </ul>
-            </li>
-            @elseif($sidebar_user == 'active2')
-            <li class="active treeview">
-                <a href="#">
-                    <i class="fa fa-th"></i> <span>User Management</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="/admin_add_user/add_user"><i class="fa fa-circle-o"></i> Add User </a></li>
-                    <li class="active"><a href="/admin_add_user/edit_delete_user"><i class="fa fa-circle-o"></i> Edit/Delete User</a></li>
-                </ul>
-            </li>
-            @else
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-th"></i> <span>User Management</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li class=""><a href="/admin_add_user/add_user"><i class="fa fa-circle-o"></i> Add User </a></li>
-                    <li><a href="/admin_add_user/edit_delete_user"><i class="fa fa-circle-o"></i> Edit/Delete User</a></li>
-                </ul>
-            </li>
-            @endif --}}
-            <!-- END SIDEBAR REGISTER USER -->
+            <li class="{{ $sidebar == 'Appointment List' ? 'active' : ''}}"><a href="{{ asset ('/appointment_list') }}"><i class="fa fa-book"></i> <span>Appointment List</span></a></li>
             
+            <li class="{{ $sidebar == 'Branches' ? 'active' : ''}}"><a href="{{ asset ('/branch') }}"><i class="fa fa-institution"></i> <span>Branches</span></a></li>
             
+            <li class="{{ $sidebar == 'Services' ? 'active' : ''}}"><a href="{{ asset ('/services_list') }}"><i class="fa fa-cart-plus"></i> <span>Services</span></a></li>
             
-            
-            
-            
-            
+            <li class="{{ $sidebar == 'Blog/News' ? 'active' : ''}}"><a href="{{ asset ('/admin_blog') }}"><i class="fa fa-newspaper-o"></i> <span>Blog/News</span></a></li>
             
         </ul>
     </section>

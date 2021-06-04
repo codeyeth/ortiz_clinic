@@ -45,7 +45,7 @@
                 @endforeach
                 @endif
             </select>
-            <input type="date" class="intro_input" placeholder="Date" required="required" wire:model="appointmentDate">
+            <input type="datetime-local" class="intro_input" placeholder="Date" required="required" wire:model="appointmentDate">
         </div>
         
         <div wire:loading.remove wire:target="submitAppointment">    

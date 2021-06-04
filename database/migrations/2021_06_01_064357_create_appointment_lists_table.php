@@ -21,6 +21,7 @@ class CreateAppointmentListsTable extends Migration
             $table->string('branch');
             $table->string('service');
             $table->string('date');
+            $table->string('remarks', '200')->nullable();
             
             $table->boolean('is_done')->nullable()->default(false);
             $table->string('is_done_by_id')->nullable();
