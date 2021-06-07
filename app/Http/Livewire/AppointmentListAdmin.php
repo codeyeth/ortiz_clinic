@@ -21,6 +21,8 @@ class AppointmentListAdmin extends Component
     public $remarks = null;
     public $remarksCount = 0;
     public $doneId = null;
+    public $deleteMode = false;
+    public $deleteModeFocusID = null;
     
     public function updatingSearch()
     {
@@ -77,12 +79,19 @@ class AppointmentListAdmin extends Component
         session()->flash('success_done', 'Appointment Done!');
     }
     
+    public function setDeleteMode($booleanValue, $focusId){
+        $this->deleteMode = $booleanValue;
+        $this->deleteModeFocusID = $focusId;
+    }
+    
     public function deleteAppointment($id){
         $appointmentDelete = AppointmentList::find($id);
         $appointmentDelete->delete();
         
         $this->emit('appointmentSuccess');
         session()->flash('success', 'Appointment Deleted!');
+        $this->deleteMode = false;
+        $this->deleteModeFocusID = null;
     }
 
     public function viewAppointment($id){

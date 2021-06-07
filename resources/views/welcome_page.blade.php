@@ -22,7 +22,7 @@
                                         {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p> --}}
                                     </div>
                                     <div class="home_buttons d-flex flex-row align-items-center justify-content-start">
-                                        <div class="button button_1 trans_200"><a href="#">read more</a></div>
+                                        <div class="button button_1 trans_200"><a href="{{ asset ('services') }}">read more</a></div>
                                         <div class="button button_2 trans_200"><a href="{{ asset ('/contact') }}">make an appointment</a></div>
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@
                                         {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p> --}}
                                     </div>
                                     <div class="home_buttons d-flex flex-row align-items-center justify-content-start">
-                                        <div class="button button_1 trans_200"><a href="#">read more</a></div>
+                                        <div class="button button_1 trans_200"><a href="{{ asset ('services') }}">read more</a></div>
                                         <div class="button button_2 trans_200"><a href="{{ asset ('/contact') }}">make an appointment</a></div>
                                     </div>
                                 </div>
@@ -70,7 +70,7 @@
                                         {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p> --}}
                                     </div>
                                     <div class="home_buttons d-flex flex-row align-items-center justify-content-start">
-                                        <div class="button button_1 trans_200"><a href="#">read more</a></div>
+                                        <div class="button button_1 trans_200"><a href="{{ asset ('services') }}">read more</a></div>
                                         <div class="button button_2 trans_200"><a href="{{ asset ('/contact') }}">make an appointment</a></div>
                                     </div>
                                 </div>
@@ -161,7 +161,7 @@
             <!-- Why Choose Us Image -->
             <div class="col-lg-6 order-lg-1 order-2">
                 <div class="why_image_container">
-                    {{-- <div class="why_image"><img src="{{ asset ('drpro/images/why_6.jpeg') }}" alt=""></div> --}}
+                    <div class="why_image"><img src="{{ asset ('drpro/images/why_1.jpg') }}" alt=""></div>
                 </div>
             </div>
             
@@ -253,7 +253,7 @@
                         <div class="service_title">{{ $services_list->service_name }}</div>
                         <div class="service_text">
                             <p> 
-                                {!! Str::limit($services_list->description, 200) !!}
+                                {!! Str::limit($services_list->description, 50) !!}
                             </p>
                         </div>
                     </div>

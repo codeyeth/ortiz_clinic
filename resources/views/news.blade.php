@@ -13,7 +13,7 @@
                 <div class="col">
                     <div class="home_content">
                         <div class="home_title">Blog</div>
-                        <div class="home_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                        <div class="home_text">Know the latest news and upates in Ortiz.</div>
                     </div>
                 </div>
             </div>

@@ -43,8 +43,8 @@
                             @if(count($branchesList) > 0)
                             @foreach ($branchesList as $branch_list)
                             <li>
-                                <div class="location_title">{{ $branch_list->branch_name }}</div>
-                                <div class="location_text">{!! $branch_list->branch_address !!}</div>
+                                <div class="location_title">{{ Str::title($branch_list->branch_name) }}</div>
+                                <div class="location_text">{{ Str::title($branch_list->branch_address) }}</div>
                             </li>
                             @endforeach
                             @endif
@@ -52,7 +52,7 @@
 
                     </div>
                     <br>
-                    <a href="#" target="_blank">
+                    <a href="{{ asset ('contact') }}">
                         <div class="location_title">See All Locations</div>
                     </a>
 
@@ -109,11 +109,11 @@
                         </div>
                         <nav class="footer_nav ml-md-auto">
                             <ul class="d-flex flex-row align-items-center justify-content-start">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About us</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="blog.html">News</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{{ asset ('/') }}">Home</a></li>
+                                <li><a href="{{ asset ('about_us') }}">About us</a></li>
+                                <li><a href="{{ asset ('services') }}">Services</a></li>
+                                <li><a href="{{ asset ('news') }}">News</a></li>
+                                <li><a href="{{ asset ('contact') }}">Contact</a></li>
                             </ul>
                         </nav>
                     </div>

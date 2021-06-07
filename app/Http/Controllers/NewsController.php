@@ -15,7 +15,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $servicesList = DB::table('services')->limit(6)->get();
+        $servicesList = DB::table('services')->where('is_most_availed', true)->limit(6)->get();
         $branchesList = DB::table('branches')->limit(2)->get();
 
         $publicHeader = 'News';

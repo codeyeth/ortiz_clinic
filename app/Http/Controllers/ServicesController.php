@@ -15,13 +15,15 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $servicesList = DB::table('services')->limit(6)->get();
+        $servicesList = DB::table('services')->where('is_most_availed', true)->limit(6)->get();
+        $servicesAllList = DB::table('services')->get();
         $branchesList = DB::table('branches')->limit(2)->get();
 
         $publicHeader = 'Services';
         
         return view('services')
         ->with('servicesList', $servicesList)
+        ->with('servicesAllList', $servicesAllList)
         ->with('branchesList', $branchesList)
         ->with('publicHeader', $publicHeader);
     }

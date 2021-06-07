@@ -15,14 +15,20 @@ class ContactController extends Controller
     */
     public function index()
     {
-        $servicesList = DB::table('services')->limit(6)->get();
+        $servicesList = DB::table('services')->where('is_most_availed', true)->limit(6)->get();
         $branchesList = DB::table('branches')->limit(2)->get();
+        $branchesAllList = DB::table('branches')->get();
+        $branchMain = DB::table('branches')->where('is_main_office', true)->limit(1)->get();
+        $branchesContacts = DB::table('branch_contacts')->get();
         
         $publicHeader = 'Contact';
         
         return view('contact')
         ->with('servicesList', $servicesList)
         ->with('branchesList', $branchesList)
+        ->with('branchesAllList', $branchesAllList)
+        ->with('branchMain', $branchMain)
+        ->with('branchesContacts', $branchesContacts)
         ->with('publicHeader', $publicHeader);
     }
     

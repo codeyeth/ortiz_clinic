@@ -43,7 +43,7 @@
                         <div class="service_title">{{ $services_list->service_name }}</div>
                         <div class="service_text">
                             <p> 
-                                {!! Str::limit($services_list->description, 200) !!}
+                                {{ Str::limit($services_list->description, 50) }}
                             </p>
                         </div>
                     </div>
@@ -93,78 +93,46 @@
     </div>
 </div>
 
-
 <!-- Prices -->
 
 <div class="prices">
     <div class="container">
         <div class="row">
             
-            <!-- Price -->
-            <div class="col-lg-6 price_col">
-                <div class="price">
-                    <div class="price_title">Breast Augmentation</div>
-                    <div class="price_text">
-                        <p>Integer aliquet congue libero, eu gravida odio ultrces ut. Etiam ac erat ut enim maximus accumsan vel ac nisl.</p>
+           
+            
+            @if( count($servicesAllList) > 0)
+            @foreach ($servicesAllList as $services_all_list)
+            
+            {{-- <div class="col-xl-4 col-md-6 service_col">
+                <div class="service text-center">
+                    <div class="service">
+                        <div class="icon_container d-flex flex-column align-items-center justify-content-center ml-auto mr-auto">
+                            <div class="icon"><img src="{{ asset ('drpro/images/icon_4.svg')}}" alt="https://www.flaticon.com/authors/prosymbols"></div>
+                        </div>
+                        <div class="service_title">{{ $services_list->service_name }}</div>
+                        <div class="service_text">
+                            <p> 
+                                {{ Str::limit($services_list->description, 70) }}
+                            </p>
+                        </div>
                     </div>
-                    <div class="price_panel">From $3500</div>
+                </div>
+            </div> --}}
+
+             <!-- Price -->
+             <div class="col-lg-6 price_col">
+                <div class="price">
+                    <div class="price_title">{{ $services_all_list->service_name }}</div>
+                    <div class="price_text">
+                        <p>{{ Str::limit($services_all_list->description, 50) }}</p>
+                    </div>
+                    <div class="price_panel">{{ $services_all_list->price_range }}</div>
                 </div>
             </div>
             
-            <!-- Price -->
-            <div class="col-lg-6 price_col">
-                <div class="price">
-                    <div class="price_title">Otoplasty</div>
-                    <div class="price_text">
-                        <p>Integer aliquet congue libero, eu gravida odio ultrces ut. Etiam ac erat ut enim maximus accumsan vel ac nisl.</p>
-                    </div>
-                    <div class="price_panel">From $2000</div>
-                </div>
-            </div>
-            
-            <!-- Price -->
-            <div class="col-lg-6 price_col">
-                <div class="price">
-                    <div class="price_title">Eyelid Surgery</div>
-                    <div class="price_text">
-                        <p>Integer aliquet congue libero, eu gravida odio ultrces ut. Etiam ac erat ut enim maximus accumsan vel ac nisl.</p>
-                    </div>
-                    <div class="price_panel">From $1500</div>
-                </div>
-            </div>
-            
-            <!-- Price -->
-            <div class="col-lg-6 price_col">
-                <div class="price">
-                    <div class="price_title">Botox</div>
-                    <div class="price_text">
-                        <p>Integer aliquet congue libero, eu gravida odio ultrces ut. Etiam ac erat ut enim maximus accumsan vel ac nisl.</p>
-                    </div>
-                    <div class="price_panel">From $200</div>
-                </div>
-            </div>
-            
-            <!-- Price -->
-            <div class="col-lg-6 price_col">
-                <div class="price">
-                    <div class="price_title">Liposuction</div>
-                    <div class="price_text">
-                        <p>Integer aliquet congue libero, eu gravida odio ultrces ut. Etiam ac erat ut enim maximus accumsan vel ac nisl.</p>
-                    </div>
-                    <div class="price_panel">From $5500</div>
-                </div>
-            </div>
-            
-            <!-- Price -->
-            <div class="col-lg-6 price_col">
-                <div class="price">
-                    <div class="price_title">Hyaluronic Acid</div>
-                    <div class="price_text">
-                        <p>Integer aliquet congue libero, eu gravida odio ultrces ut. Etiam ac erat ut enim maximus accumsan vel ac nisl.</p>
-                    </div>
-                    <div class="price_panel">From $350</div>
-                </div>
-            </div>
+            @endforeach
+            @endif
             
         </div>
     </div>

@@ -18,6 +18,7 @@ class CreateBranchesTable extends Migration
             $table->string('branch_name');
             $table->string('branch_address', '500');
             $table->string('branch_contact');
+            $table->boolean('is_main_office')->nullable()->default(false);
             $table->string('created_by_id');
             $table->string('created_by');
             $table->timestamps();

@@ -60,103 +60,103 @@
             </div>
             
           </div>
-        </div>
-        <!-- /.content-wrapper -->
-        
-        <footer class="main-footer">
-          <div class="pull-right hidden-xs" hidden>
-            <b>Version</b> 1.0.0
-          </div>
-          <strong>Copyright &copy; 2021 <a href="">Ortiz Medical Skin Clinic</a>.</strong> All rights
-          reserved.
-        </footer>
-        
-        
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-          <!-- Create the tabs -->
-          <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-            <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-          </ul>
-          <!-- Tab panes -->
-          <div class="tab-content">
-            <!-- Home tab content -->
-            
-            <div class="tab-pane" id="control-sidebar-home-tab">
+          <!-- /.content-wrapper -->
+          
+          <footer class="main-footer">
+            <div class="pull-right hidden-xs" hidden>
+              <b>Version</b> 1.0.0
             </div>
-            <!-- /.tab-pane -->
-            
-            <div class="tab-pane" id="control-sidebar-settings-tab">
+            <strong>Copyright &copy; 2021 <a href="">Ortiz Medical Skin Clinic</a>.</strong> All rights
+            reserved.
+          </footer>
+          
+          
+          <!-- Control Sidebar -->
+          <aside class="control-sidebar control-sidebar-dark">
+            <!-- Create the tabs -->
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+              <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+              <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <!-- Home tab content -->
+              
+              <div class="tab-pane" id="control-sidebar-home-tab">
+              </div>
+              <!-- /.tab-pane -->
+              
+              <div class="tab-pane" id="control-sidebar-settings-tab">
+              </div>
+              
             </div>
-            
+          </aside>
+          <!-- /.control-sidebar -->
+          <!-- Add the sidebar's background. This div must be placed
+            immediately after the control sidebar -->
+            <div class="control-sidebar-bg"></div>
           </div>
-        </aside>
-        <!-- /.control-sidebar -->
-        <!-- Add the sidebar's background. This div must be placed
-          immediately after the control sidebar -->
-          <div class="control-sidebar-bg"></div>
-        </div>
-        <!-- ./wrapper -->
-        
-        @livewireScripts
-
-        @include('livewire_scripts.clients_testimonial_script')        
-        @include('livewire_scripts.appointment_list_script')
-        
-        <!-- jQuery 3 -->
-        <script src="{{ asset ('/admin_template/bower_components/jquery/dist/jquery.min.js')}}"></script>
-        <!-- Bootstrap 3.3.7 -->
-        <script src="{{ asset ('/admin_template/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-        <!-- FastClick -->
-        <script src="{{ asset ('/admin_template/bower_components/fastclick/lib/fastclick.js')}}"></script>
-        <!-- AdminLTE App -->
-        <script src="{{ asset ('/admin_template/dist/js/adminlte.min.js')}}"></script>
-        <!-- Sparkline -->
-        <script src="{{ asset ('/admin_template/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js')}}"></script>
-        <!-- jvectormap  -->
-        <script src="{{ asset ('/admin_template/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
-        <script src="{{ asset ('/admin_template/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
-        <!-- SlimScroll -->
-        <script src="{{ asset ('/admin_template/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
-        <!-- ChartJS -->
-        <script src="{{ asset ('/admin_template/bower_components/chart.js/Chart.js')}}"></script>
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="{{ asset ('/admin_template/dist/js/pages/dashboard2.js')}}"></script>
-        <!-- AdminLTE for demo purposes -->
-        <script src="{{ asset ('/admin_template/dist/js/demo.js')}}"></script>
-        <!-- DataTables -->
-        <script src="{{ asset ('/admin_template/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
-        <script src="{{ asset ('/admin_template/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
-        
-        <script src="{{ asset ('/admin_template/plugins/iCheck/icheck.min.js') }}"></script>
-        
-        <!-- page script -->
-        <script>
-          $(function () {
-            $('#example1').DataTable()
-            /*
-            $('#example1').DataTable({
-              'paging'      : true,
-              'lengthChange': false,
-              'searching'   : false,
-              'ordering'    : true,
-              'info'        : true,
-              'autoWidth'   : false
+          <!-- ./wrapper -->
+          
+          @livewireScripts
+          
+          @include('livewire_scripts.clients_testimonial_script')        
+          @include('livewire_scripts.appointment_list_script')
+          @include('livewire_scripts.branch_list_script')
+          @include('livewire_scripts.services_list_script')
+          
+          <!-- jQuery 3 -->
+          <script src="{{ asset ('/admin_template/bower_components/jquery/dist/jquery.min.js')}}"></script>
+          <!-- Bootstrap 3.3.7 -->
+          <script src="{{ asset ('/admin_template/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+          <!-- FastClick -->
+          <script src="{{ asset ('/admin_template/bower_components/fastclick/lib/fastclick.js')}}"></script>
+          <!-- AdminLTE App -->
+          <script src="{{ asset ('/admin_template/dist/js/adminlte.min.js')}}"></script>
+          <!-- Sparkline -->
+          <script src="{{ asset ('/admin_template/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js')}}"></script>
+          <!-- jvectormap  -->
+          <script src="{{ asset ('/admin_template/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
+          <script src="{{ asset ('/admin_template/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
+          <!-- SlimScroll -->
+          <script src="{{ asset ('/admin_template/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
+          <!-- ChartJS -->
+          <script src="{{ asset ('/admin_template/bower_components/chart.js/Chart.js')}}"></script>
+          <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+          <script src="{{ asset ('/admin_template/dist/js/pages/dashboard2.js')}}"></script>
+          <!-- AdminLTE for demo purposes -->
+          <script src="{{ asset ('/admin_template/dist/js/demo.js')}}"></script>
+          <!-- DataTables -->
+          <script src="{{ asset ('/admin_template/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+          <script src="{{ asset ('/admin_template/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
+          
+          <script src="{{ asset ('/admin_template/plugins/iCheck/icheck.min.js') }}"></script>
+          
+          <!-- page script -->
+          <script>
+            $(function () {
+              $('#example1').DataTable()
+              /*
+              $('#example1').DataTable({
+                'paging'      : true,
+                'lengthChange': false,
+                'searching'   : false,
+                'ordering'    : true,
+                'info'        : true,
+                'autoWidth'   : false
+              })
+              */
             })
-            */
-          })
-        </script>
-        
-        {{-- <script>
-          $(function () {
-            $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-              checkboxClass: 'icheckbox_minimal-blue',
-              radioClass   : 'iradio_minimal-blue'
+          </script>
+          
+          {{-- <script>
+            $(function () {
+              $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+                checkboxClass: 'icheckbox_minimal-blue',
+                radioClass   : 'iradio_minimal-blue'
+              })
             })
-          })
-        </script> --}}
-        
-      </body>
-      </html>
-      
+          </script> --}}
+          
+        </body>
+        </html>

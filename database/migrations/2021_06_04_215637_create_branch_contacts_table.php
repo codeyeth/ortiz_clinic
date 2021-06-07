@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateServicesTable extends Migration
+class CreateBranchContactsTable extends Migration
 {
     /**
     * Run the migrations.
@@ -13,13 +13,10 @@ class CreateServicesTable extends Migration
     */
     public function up()
     {
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('branch_contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('service_name');
-            $table->string('price_range');
-            $table->string('description', '2000');
-            $table->string('cover_image')->nullable();
-            $table->boolean('is_most_availed')->nullable()->default(false);
+            $table->string('branch_id');
+            $table->string('contact_number');
             $table->string('created_by_id');
             $table->string('created_by');
             $table->timestamps();
@@ -33,6 +30,6 @@ class CreateServicesTable extends Migration
     */
     public function down()
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('branch_contacts');
     }
 }

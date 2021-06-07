@@ -110,7 +110,14 @@
                                 <button class="btn btn-primary btn-flat btn-sm" wire:click="viewAppointment({{ $appointment_list->id }})" title="View Appointment" data-toggle="modal" data-target="#appointmentDetailsModal"><i class="fa fa-search"></i></button>
                             </td>
                             <td>
-                                <button class="btn btn-danger btn-flat btn-sm" wire:click="deleteAppointment({{ $appointment_list->id }})" title="Delete"><i class="fa fa-trash"></i></button>
+                                @if ( $deleteMode == false )
+                                <button class="btn btn-danger btn-flat btn-sm" wire:click="setDeleteMode(true, {{ $appointment_list->id }})" title="Delete"><i class="fa fa-trash"></i></button>
+                                @endif
+                                
+                                @if ( $deleteMode == true && $deleteModeFocusID == $appointment_list->id )
+                                <button class="btn btn-danger btn-flat btn-sm" wire:click="deleteAppointment({{ $appointment_list->id }})" title="Confirm Delete"><i class="fa fa-check"></i> Confirm Delete</button>
+                                <button class="btn btn-warning btn-flat btn-sm" wire:click="$set('deleteMode', false)" title="Cancel"><i class="fa fa-close"></i></button>
+                                @endif
                             </td>
                         </tr>
                         @endforeach
@@ -189,7 +196,7 @@
                         <label for="">Remarks</label>
                         {{-- <input class="form-control" type="text" value="{{ $appointment_details->remarks }}" /> --}}
                         <textarea class="form-control" id="remarks" name="remarks" rows="5" maxlength="200">{{ $appointment_details->remarks }}</textarea>
-
+                        
                     </div>
                     
                     @if( $appointment_details->is_confirmed == true )

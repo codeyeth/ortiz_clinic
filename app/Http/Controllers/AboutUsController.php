@@ -16,7 +16,7 @@ class AboutUsController extends Controller
      */
     public function index()
     {
-        $servicesList = DB::table('services')->limit(6)->get();
+        $servicesList = DB::table('services')->where('is_most_availed', true)->limit(6)->get();
         $branchesList = DB::table('branches')->limit(2)->get();
         $testimonialList = DB::table('client_testimonials')->where('is_published', true)->orderBy('id', 'DESC')->limit(5)->get();
 

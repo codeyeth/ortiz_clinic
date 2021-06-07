@@ -78,12 +78,18 @@
                             </td>
                             <td> <i> {{ $testimonial_list->created_by }} </i> <br> <b> {{ \Carbon\Carbon::parse($testimonial_list->created_at)->toDayDateTimeString() }} </b> </td>
                             <td>
-                                <button class="btn btn-secondary btn-flat" wire:click="editTestimonial({{ $testimonial_list->id }})" data-toggle="modal" data-target="#createTestimonialModal" title="Edit">
+                                <button class="btn btn-secondary btn-flat btn-sm" wire:click="editTestimonial({{ $testimonial_list->id }})" data-toggle="modal" data-target="#createTestimonialModal" title="Edit">
                                     <i class="fa fa-pencil"></i>
                                 </button> 
                             </td>
                             <td>
-                                <button class="btn btn-danger btn-flat" wire:click="deleteTestimonial({{ $testimonial_list->id }})" title="Delete"><i class="fa fa-trash"></i></button>
+                                @if ( $deleteMode == false )
+                                <button class="btn btn-danger btn-flat btn-sm" wire:click="setDeleteMode(true, {{ $testimonial_list->id }})" title="Delete"><i class="fa fa-trash"></i></button>
+                                @endif
+                                @if ( $deleteMode == true && $deleteModeFocusID == $testimonial_list->id)
+                                <button class="btn btn-danger btn-flat btn-sm" wire:click="deleteTestimonial({{ $testimonial_list->id }})" title="Delete"><i class="fa fa-trash"></i> Confirm Delete</button>
+                                <button class="btn btn-warning btn-flat btn-sm" wire:click="$set('deleteMode', false)" title="Cancel"><i class="fa fa-close"></i></button>
+                                @endif
                             </td>
                         </tr>
                         @endforeach

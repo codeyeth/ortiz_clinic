@@ -22,6 +22,8 @@ class ClientsTestimonial extends Component
     public $search = '';
     
     public $updateMode = false;
+    public $deleteMode = false;
+    public $deleteModeFocusID = null;
     public $updateModeId = null;
     public $clientName = null;
     public $testimonialScript = null;
@@ -32,6 +34,8 @@ class ClientsTestimonial extends Component
     
     public function resetContent(){
         $this->updateMode = false;
+        $this->deleteMode = false;
+        $this->deleteModeFocusID = null;
         $this->updateModeId = null;
         $this->clientName = null;
         $this->testimonialScript = null;
@@ -94,6 +98,11 @@ class ClientsTestimonial extends Component
         session()->flash('success', 'Testimonial Updated Successfully!');
     }
     
+    public function setDeleteMode($booleanValue, $focusId){
+        $this->deleteMode = $booleanValue;
+        $this->deleteModeFocusID = $focusId;
+    }
+
     public function deleteTestimonial($id){
         $testimonialDelete = ClientTestimonial::find($id);
         $testimonialDelete->delete();

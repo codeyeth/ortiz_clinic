@@ -13,7 +13,7 @@
                 <div class="col">
                     <div class="home_content">
                         <div class="home_title">Contact</div>
-                        <div class="home_text">Reach us now! For the Better and Glowing you.</div>
+                        <div class="home_text">Reach us now! For the Better and Beautiful you.</div>
                     </div>
                 </div>
             </div>
@@ -51,11 +51,21 @@
                         <ul>
                             <li class="d-flex flex-row align-items-start justify-content-start">
                                 <div>Main Office</div>
-                                <div>3F Puregold Araneta Cubao, Quezon City Landmark: Across Farmers Plaza</div>
+                                <div>{{ $branchMain[0]->branch_name }}
+                                    {{ Str::title($branchMain[0]->branch_address) }}
+                                </div>
+                                {{-- 3F Puregold Araneta Cubao, Quezon City Landmark: Across Farmers Plaza --}}
                             </li>
                             <li class="d-flex flex-row align-items-start justify-content-start">
-                                <div>Phone</div>
-                                <div>(0921) 519-3724</div>
+                                <div>Contacts</div>
+                                <div>
+                                    {{-- (0921) 519-3724 --}}
+                                    @foreach ($branchesContacts as $branch_contacts)
+                                    @if( $branch_contacts->branch_id == $branchMain[0]->branch_contact  )
+                                    {{ $branch_contacts->contact_number }} <br>
+                                    @endif
+                                    @endforeach
+                                </div>
                             </li>
                             <li class="d-flex flex-row align-items-start justify-content-start">
                                 <div>E-mail</div>
@@ -74,27 +84,40 @@
             </div>
         </div>
         
-        {{-- <div class="row google_map_row">
-            <div class="col">
-                
-                <!-- Contact Map -->
-                
-                <div class="contact_map">
+        <br>
+        <br>
+        
+        <div class="contact">
+            <div class="container">
+                <div class="row">
                     
-                    <!-- Google Map -->
+                    @if( count($branchesAllList) > 0)
+                    @foreach ($branchesAllList as $branches_all_list)
                     
-                    <div class="map">
-                        <div id="google_map" class="google_map">
-                            <div class="map_container">
-                                <div id="map"></div>
+                    <!-- Price -->
+                    <div class="col-lg-6 price_col">
+                        <div class="price">
+                            <div class="price_title">{{ $branches_all_list->branch_name }}</div>
+                            <div class="price_text">
+                                <p>
+                                    {{ Str::limit($branches_all_list->branch_address, 100) }}
+                                   
+                                    @foreach ($branchesContacts as $branch_contacts)
+                                    @if( $branch_contacts->branch_id == $branches_all_list->branch_contact  )
+                                    <li> {{ $branch_contacts->contact_number }} </li>
+                                    @endif
+                                    @endforeach
+                                </p>
                             </div>
                         </div>
                     </div>
                     
+                    @endforeach
+                    @endif
+                    
                 </div>
-                
             </div>
-        </div> --}}
+        </div>
         
     </div>
 </div>
