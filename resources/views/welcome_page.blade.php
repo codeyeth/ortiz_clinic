@@ -7,7 +7,7 @@
     <!-- Home Slider -->
     <div class="home_slider_container">
         <div class="owl-carousel owl-theme home_slider">
-            
+        
             <!-- Slide -->
             <div class="owl-item">
                 <div class="background_image" style="background-image:url({{ asset ('drpro/images/slider_1.jpeg')}})"></div>
@@ -16,10 +16,14 @@
                         <div class="row">
                             <div class="col">
                                 <div class="home_content">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
                                     <div class="home_subtitle">First in the Philippines in</div>
                                     <div class="home_title">Aesthetic <small>Medicine</small></div>
                                     <div class="home_text">
-                                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p> --}}
+                                    <p>Aesthetic medicine is a broad term for specialties that focus on altering cosmetic appearance through the treatment of conditions including scars, skin laxity, wrinkles, moles, liver spots, excess fat, cellulite, unwanted hair, skin discoloration and spider veins</p>
                                     </div>
                                     <div class="home_buttons d-flex flex-row align-items-center justify-content-start">
                                         <div class="button button_1 trans_200"><a href="{{ asset ('services') }}">read more</a></div>
@@ -40,10 +44,14 @@
                         <div class="row">
                             <div class="col">
                                 <div class="home_content">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
                                     <div class="home_subtitle">Services</div>
                                     <div class="home_title">Signature Facial</div>
                                     <div class="home_text">
-                                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p> --}}
+                                        {{-- <p>Aesthetic medicine is a broad term for specialties that focus on altering cosmetic appearance through the treatment of conditions including scars, skin laxity, wrinkles, moles, liver spots, excess fat, cellulite, unwanted hair, skin discoloration and spider veins</p> --}}
                                     </div>
                                     <div class="home_buttons d-flex flex-row align-items-center justify-content-start">
                                         <div class="button button_1 trans_200"><a href="{{ asset ('services') }}">read more</a></div>
@@ -64,10 +72,14 @@
                         <div class="row">
                             <div class="col">
                                 <div class="home_content">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
                                     <div class="home_subtitle">Services</div>
                                     <div class="home_title">Eyebrow Tattoo</div>
                                     <div class="home_text">
-                                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p> --}}
+                                        {{-- <p>Aesthetic medicine is a broad term for specialties that focus on altering cosmetic appearance through the treatment of conditions including scars, skin laxity, wrinkles, moles, liver spots, excess fat, cellulite, unwanted hair, skin discoloration and spider veins</p> --}}
                                     </div>
                                     <div class="home_buttons d-flex flex-row align-items-center justify-content-start">
                                         <div class="button button_1 trans_200"><a href="{{ asset ('services') }}">read more</a></div>
@@ -161,7 +173,7 @@
             <!-- Why Choose Us Image -->
             <div class="col-lg-6 order-lg-1 order-2">
                 <div class="why_image_container">
-                    <div class="why_image"><img src="{{ asset ('drpro/images/why_1.jpg') }}" alt=""></div>
+                    {{-- <div class="why_image"><img src="{{ asset ('drpro/images/why_1.jpg') }}" alt=""></div> --}}
                 </div>
             </div>
             
@@ -218,6 +230,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
 </div>
@@ -250,10 +263,10 @@
                         <div class="icon_container d-flex flex-column align-items-center justify-content-center ml-auto mr-auto">
                             <div class="icon"><img src="{{ asset ('drpro/images/icon_4.svg')}}" alt="https://www.flaticon.com/authors/prosymbols"></div>
                         </div>
-                        <div class="service_title">{{ $services_list->service_name }}</div>
+                        <div class="service_title">{{ Str::title($services_list->service_name) }}</div>
                         <div class="service_text">
                             <p> 
-                                {!! Str::limit($services_list->description, 50) !!}
+                                {{ Str::limit(Str::title($services_list->description), 100) }}
                             </p>
                         </div>
                     </div>
@@ -275,18 +288,7 @@
         <div class="row">
             <div class="col">
                 <div class="extra_container d-flex flex-row align-items-start justify-content-end">
-                    <div class="extra_content">
-                        <div class="extra_disc d-flex flex-row align-items-end justify-content-start">
-                            <div>30<span>%</span></div>
-                            <div>Discount</div>
-                        </div>
-                        <div class="extra_title">Only in August</div>
-                        <div class="extra_text">
-                            <p>Nulla facilisi. Nulla egestas vel lacus sed interdum. Sed mollis, orci elementum eleifend tempor, nunc libero porttitor tellus.</p>
-                        </div>
-                        <div class="button button_1 extra_link trans_200"><a href="#">read more</a></div>
-                    </div>
-                    <div style="padding-right: 10px;"></div>
+                    
                     <div class="extra_content">
                         <div class="extra_disc d-flex flex-row align-items-end justify-content-start">
                             <div>40<span>%</span></div>
