@@ -15,7 +15,7 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $servicesList = DB::table('services')->where('is_most_availed', true)->limit(6)->get();
+        $servicesList = DB::table('services')->where('is_most_availed', true)->limit(3)->get();
         $servicesAllList = DB::table('services')->orderBy('service_name', 'ASC')->get();
         $branchesList = DB::table('branches')->limit(2)->get();
 

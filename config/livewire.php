@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    
     /*
     |--------------------------------------------------------------------------
     | Class Namespace
@@ -14,9 +14,9 @@ return [
     | After changing this item, run: `php artisan livewire:discover`.
     |
     */
-
+    
     'class_namespace' => 'App\\Http\\Livewire',
-
+    
     /*
     |--------------------------------------------------------------------------
     | View Path
@@ -26,9 +26,9 @@ return [
     | file manipulation helper commands like `artisan make:livewire`.
     |
     */
-
+    
     'view_path' => resource_path('views/livewire'),
-
+    
     /*
     |--------------------------------------------------------------------------
     | Layout
@@ -38,9 +38,9 @@ return [
     | the view returned by SomeComponent will be wrapped in "layouts.app"
     |
     */
-
+    
     'layout' => 'layouts.app',
-
+    
     /*
     |--------------------------------------------------------------------------
     | Livewire Assets URL
@@ -53,9 +53,10 @@ return [
     | Examples: "/assets", "myurl.com/app".
     |
     */
-
+    
     'asset_url' => null,
-
+    // 'asset_url' => 'https://ortizskinclinic.com',
+    
     /*
     |--------------------------------------------------------------------------
     | Livewire Endpoint Middleware Group
@@ -66,9 +67,9 @@ return [
     | a Livewire component updates). It is set to "web" by default.
     |
     */
-
+    
     'middleware_group' => 'web',
-
+    
     /*
     |--------------------------------------------------------------------------
     | Livewire Temporary File Uploads Endpoint Configuration
@@ -80,7 +81,7 @@ return [
     | items below are used for customizing the way the endpoint works.
     |
     */
-
+    
     'temporary_file_upload' => [
         'disk' => null,        // Example: 'local', 's3'              Default: 'default'
         'rules' => null,       // Example: ['file', 'mimes:png,jpg']  Default: ['required', 'file', 'max:12288'] (12MB)
@@ -93,7 +94,7 @@ return [
         ],
         'max_upload_time' => 5, // Max duration (in minutes) before an upload gets invalidated.
     ],
-
+    
     /*
     |--------------------------------------------------------------------------
     | Manifest File Path
@@ -107,7 +108,7 @@ return [
     | Example: for Laravel Vapor, it would be "/tmp/storage/bootstrap/cache/livewire-components.php".
     |
     */
-
+    
     'manifest_path' => null,
-
+    
 ];

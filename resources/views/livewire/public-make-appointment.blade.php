@@ -1,5 +1,4 @@
 <div>
-    
     <style>
         input { 
             text-transform: uppercase;
@@ -26,9 +25,9 @@
         </div>
         
         <div class="d-flex flex-row align-items-start justify-content-between flex-wrap">
-            <input type="text" class="intro_input" placeholder="Your Name" required="required" wire:model="name">            
-            <input type="email" class="intro_input" placeholder="Your E-mail" required="required" wire:model="email">
-            <input type="number" class="intro_input" placeholder="Your Mobile No" required="required" wire:model="mobileNo">
+            <input type="text" class="intro_input" placeholder="Your Name" required="required" wire:model.defer="name">            
+            <input type="email" class="intro_input" placeholder="Your E-mail" required="required" wire:model.defer="email">
+            <input type="number" class="intro_input" placeholder="Your Mobile No" required="required" wire:model.defer="mobileNo">
             <select class="intro_select intro_input" required wire:model="selectedBranch">
                 <option disabled="" selected="" value="">Branch</option>
                 @if( count($branchList) > 0 )
@@ -45,7 +44,7 @@
                 @endforeach
                 @endif
             </select>
-            <input type="datetime-local" class="intro_input" placeholder="Date" required="required" wire:model="appointmentDate">
+            <input type="date" class="intro_input" placeholder="Date" required="required" wire:model="appointmentDate">
         </div>
         
         <div wire:loading.remove wire:target="submitAppointment">    

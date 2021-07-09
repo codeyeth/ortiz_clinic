@@ -87,10 +87,15 @@ class BranchList extends Component
     }
     
     public function addBranch(){
+        $branchContact = '';
+        if( count($this->branchContactArray) > 0 ){
+            $branchContact = Str::uuid();
+        }
+        
         $addBranch = Branches::create([
             'branch_name' => Str::upper($this->branchName),
             'branch_address' => Str::upper($this->branchAddress),
-            'branch_contact' => Str::uuid(),
+            'branch_contact' => $branchContact,
             'is_main_office' => $this->isMainOffice,
             'created_by_id' => Auth::user()->id,
             'created_by' => Auth::user()->name,
@@ -136,9 +141,16 @@ class BranchList extends Component
     
     public function updateBranch($id){
         $updateBranch = Branches::find($id);
+        
+        $branchContact = $updateBranch->branch_contact;
+        if($updateBranch->branch_contact == ''){
+            $branchContact = Str::uuid();
+        }
+        
         $updateBranch->update([
             'branch_name' => Str::upper($this->branchName),
             'branch_address' => Str::upper($this->branchAddress),
+            'branch_contact' => $branchContact,
             'is_main_office' => $this->isMainOffice,
             ]
         );
@@ -172,7 +184,7 @@ class BranchList extends Component
         $this->deleteMode = $booleanValue;
         $this->deleteModeFocusID = $focusId;
     }
-
+    
     public function deleteBranch($id){
         $branchDelete = Branches::find($id);
         $branchDelete->delete();

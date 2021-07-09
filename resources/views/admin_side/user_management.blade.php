@@ -2,6 +2,6 @@
 
 @section('content')
 
-@livewire('admin-home')
+@livewire('user-management')
 
 @endsection

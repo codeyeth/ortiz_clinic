@@ -127,7 +127,7 @@ class ServicesList extends Component
             'serviceList' => Services::where('service_name', 'like', '%'.$this->search.'%')
             ->orWhere('price_range', 'like', '%'.$this->search.'%')
             ->orWhere('created_by', 'like', '%'.$this->search.'%')
-            ->orderBy('id', 'DESC')->paginate(20),
+            ->orderBy('id', 'DESC')->paginate(30),
             'serviceListCount' =>  Services::where('service_name', 'like', '%'.$this->search.'%')
             ->orWhere('price_range', 'like', '%'.$this->search.'%')
             ->orWhere('created_by', 'like', '%'.$this->search.'%')

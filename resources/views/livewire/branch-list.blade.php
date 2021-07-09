@@ -145,18 +145,18 @@
                             
                             <div class="form-group">
                                 <label for="">Branch Name</label>
-                                <input class="form-control" type="text" placeholder="Mall of Asia" name="branchName" id="branchName" required wire:model="branchName" />
+                                <input class="form-control" type="text" placeholder="Mall of Asia" name="branchName" id="branchName" required wire:model.defer="branchName" />
                             </div>
                             
                             <div class="form-group">
                                 <label for="">Branch Address {{ $branchAddressCount }}/200 </label>
-                                <textarea class="form-control" id="branchAddress" name="branchAddress" wire:model="branchAddress" rows="5" maxlength="200"></textarea>
+                                <textarea class="form-control" id="branchAddress" name="branchAddress" wire:model.defer="branchAddress" rows="5" maxlength="200"></textarea>
                             </div>
                             
                             @if( $hasMainOffice == false || $isMainOffice == true )
                             <div class="form-group">
                                 <label>
-                                    <input type="checkbox" class="minimal" wire:model="isMainOffice">
+                                    <input type="checkbox" class="minimal" wire:model.defer="isMainOffice">
                                     Main Office
                                 </label>
                             </div>
@@ -175,7 +175,7 @@
                                     @foreach($branchContactArray as $index => $branch_array)
                                     <tr>
                                         <td>
-                                            <input class="form-control" type="text" placeholder="09XXXXXXXXX" name="contactNo_{{ $index }}" id="contactNo_{{ $index }}" required wire:model="branchContactArray.{{ $index }}.contactNumber" />
+                                            <input class="form-control" type="text" placeholder="09XXXXXXXXX" name="contactNo_{{ $index }}" id="contactNo_{{ $index }}" required wire:model.defer="branchContactArray.{{ $index }}.contactNumber" />
                                         </td>
                                         <td>
                                             @if( $branch_array['id'] == '0000' )

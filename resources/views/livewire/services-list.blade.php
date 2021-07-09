@@ -24,7 +24,7 @@
         
         <div>
             <div class="input-group">
-                <input type="text" placeholder="Search" class="form-control input-lg" id="search" wire:model="search" wire:keydown.escape="$set('search', '')" autofocus> 
+                <input type="text" placeholder="Search" class="form-control input-lg" id="search" wire:model.defer="search" wire:keydown.escape="$set('search', '')" autofocus> 
                 <span class="input-group-btn">
                     <button type="reset" class="btn btn-warning btn-flat btn-lg" wire:click="$set('search', '')">
                         Clear
@@ -141,20 +141,20 @@
                             
                             <div class="form-group">
                                 <label for="">Service Name</label>
-                                <input class="form-control" type="text" placeholder="Acne Care Facial" name="serviceName" id="serviceName" required wire:model="serviceName" />
+                                <input class="form-control" type="text" placeholder="Acne Care Facial" name="serviceName" id="serviceName" required wire:model.defer="serviceName" />
                             </div>
                             
                             <div class="form-group">
                                 <label for="">Price Range</label>
-                                <input class="form-control" type="text" placeholder="From PHP2000" name="priceRange" id="priceRange" required wire:model="priceRange" />
+                                <input class="form-control" type="text" placeholder="From PHP2000" name="priceRange" id="priceRange" required wire:model.defer="priceRange" />
                             </div>
                             
                             <div class="form-group">
                                 <label for="">Description {{ $serviceDescriptionCount }}/500 </label>
-                                <textarea class="form-control" id="serviceDescription" name="serviceDescription" wire:model="serviceDescription" rows="5" maxlength="500"></textarea>
+                                <textarea class="form-control" id="serviceDescription" name="serviceDescription" wire:model.defer="serviceDescription" rows="5" maxlength="500"></textarea>
                             </div>
                             
-                            @if( $mostAvailedCount < 6 || $isMostAvailed == true)
+                            @if( $mostAvailedCount < 3 || $isMostAvailed == true)
                             <div class="form-group">
                                 <label>
                                     <input type="checkbox" class="minimal" wire:model="isMostAvailed">
@@ -163,7 +163,7 @@
                             </div>
                             @endif
                             
-                            @if( $mostAvailedCount >= 6 && $isMostAvailed == false)
+                            @if( $mostAvailedCount >= 3 && $isMostAvailed == false)
                             <p><i>Marked Services as Most Availed. Limit Reached</i></p>
                             @endif
                             
@@ -183,6 +183,7 @@
                     
                 </div>
             </div>
+            
         </div>
         
     </div>

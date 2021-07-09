@@ -3,7 +3,7 @@
         
         <!-- Logo -->
         <div class="logo">
-            <a href="#">
+            <a href="{{ asset ('/') }}">
                 <div>Ortiz<span>MEDICAL</span></div>
                 <div>Skin Clinic</div>
             </a>
@@ -15,12 +15,12 @@
                 <li class="{{ $publicHeader == 'Home' ?  'active' : ''}}"><a href="{{ asset ('/') }}">Home</a></li>
                 <li class="{{ $publicHeader == 'About Us' ?  'active' : ''}}"><a href="{{ asset ('about_us') }}">About us</a></li>
                 <li class="{{ $publicHeader == 'Services' ?  'active' : ''}}"><a href="{{ asset ('services') }}">Services</a></li>
-                <li class="{{ $publicHeader == 'News' ?  'active' : ''}}"><a href="{{ asset ('news') }}" >News</a></li>
+                {{-- <li class="{{ $publicHeader == 'News' ?  'active' : ''}}"><a href="{{ asset ('news') }}" >News</a></li> --}}
                 <li class="{{ $publicHeader == 'Contact' ?  'active' : ''}}"><a href="{{ asset ('contact') }}">Contact</a></li>
             </ul>
         </nav>
         <div class="header_extra d-flex flex-row align-items-center justify-content-end ml-auto">
-            
+                
             <!-- Work Hourse -->
             <div class="work_hours">Mo - Sun: 10:00am - 7:00pm</div>
             

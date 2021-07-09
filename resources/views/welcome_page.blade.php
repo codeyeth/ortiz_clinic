@@ -7,7 +7,7 @@
     <!-- Home Slider -->
     <div class="home_slider_container">
         <div class="owl-carousel owl-theme home_slider">
-        
+            
             <!-- Slide -->
             <div class="owl-item">
                 <div class="background_image" style="background-image:url({{ asset ('drpro/images/slider_1.jpeg')}})"></div>
@@ -22,8 +22,11 @@
                                     <br>
                                     <div class="home_subtitle">First in the Philippines in</div>
                                     <div class="home_title">Aesthetic <small>Medicine</small></div>
+                                    <br>
                                     <div class="home_text">
-                                    <p>Aesthetic medicine is a broad term for specialties that focus on altering cosmetic appearance through the treatment of conditions including scars, skin laxity, wrinkles, moles, liver spots, excess fat, cellulite, unwanted hair, skin discoloration and spider veins</p>
+                                        @if ( $isDesktop == true )
+                                        <p style="color: black;">Aesthetic medicine is a broad term for specialties that focus on altering cosmetic appearance through the treatment of conditions including scars, skin laxity, wrinkles, moles, liver spots, excess fat, cellulite, unwanted hair, skin discoloration and spider veins</p>                                            
+                                        @endif
                                     </div>
                                     <div class="home_buttons d-flex flex-row align-items-center justify-content-start">
                                         <div class="button button_1 trans_200"><a href="{{ asset ('services') }}">read more</a></div>
@@ -50,8 +53,11 @@
                                     <br>
                                     <div class="home_subtitle">Services</div>
                                     <div class="home_title">Signature Facial</div>
+                                    <br>
                                     <div class="home_text">
-                                        {{-- <p>Aesthetic medicine is a broad term for specialties that focus on altering cosmetic appearance through the treatment of conditions including scars, skin laxity, wrinkles, moles, liver spots, excess fat, cellulite, unwanted hair, skin discoloration and spider veins</p> --}}
+                                        @if ( $isDesktop == true )
+                                        <p style="color: black;">Aesthetic medicine is a broad term for specialties that focus on altering cosmetic appearance through the treatment of conditions including scars, skin laxity, wrinkles, moles, liver spots, excess fat, cellulite, unwanted hair, skin discoloration and spider veins</p>
+                                        @endif
                                     </div>
                                     <div class="home_buttons d-flex flex-row align-items-center justify-content-start">
                                         <div class="button button_1 trans_200"><a href="{{ asset ('services') }}">read more</a></div>
@@ -78,8 +84,11 @@
                                     <br>
                                     <div class="home_subtitle">Services</div>
                                     <div class="home_title">Eyebrow Tattoo</div>
+                                    <br>
                                     <div class="home_text">
-                                        {{-- <p>Aesthetic medicine is a broad term for specialties that focus on altering cosmetic appearance through the treatment of conditions including scars, skin laxity, wrinkles, moles, liver spots, excess fat, cellulite, unwanted hair, skin discoloration and spider veins</p> --}}
+                                        @if ( $isDesktop == true )
+                                        <p style="color: black;">Aesthetic medicine is a broad term for specialties that focus on altering cosmetic appearance through the treatment of conditions including scars, skin laxity, wrinkles, moles, liver spots, excess fat, cellulite, unwanted hair, skin discoloration and spider veins</p>
+                                        @endif
                                     </div>
                                     <div class="home_buttons d-flex flex-row align-items-center justify-content-start">
                                         <div class="button button_1 trans_200"><a href="{{ asset ('services') }}">read more</a></div>
@@ -128,7 +137,6 @@
                     <div class="milestones">
                         <div class="row milestones_row">
                             
-                            <!-- Milestone -->
                             <div class="col-md-4 milestone_col">
                                 <div class="milestone">
                                     <div class="milestone_counter" data-end-value="10000" data-sign-before="+">0</div>
@@ -136,7 +144,6 @@
                                 </div>
                             </div>
                             
-                            <!-- Milestone -->
                             <div class="col-md-5 milestone_col">
                                 <div class="milestone">
                                     <div class="milestone_counter" data-end-value="50" data-sign-after="+">0</div>
@@ -149,7 +156,6 @@
                 </div>
             </div>
             
-            <!-- Make Appointment -->
             <div class="col-lg-6 intro_col">
                 <div class="intro_form_container">
                     <div class="intro_form_title">Make an Appointment</div>
@@ -266,7 +272,7 @@
                         <div class="service_title">{{ Str::title($services_list->service_name) }}</div>
                         <div class="service_text">
                             <p> 
-                                {{ Str::limit(Str::title($services_list->description), 100) }}
+                                {{ Str::limit(Str::title($services_list->description), 200) }}
                             </p>
                         </div>
                     </div>
@@ -282,7 +288,7 @@
 
 <!-- Extra -->
 
-<div class="extra">
+{{-- <div class="extra">
     <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{ asset ('drpro/images/extra_1.jpeg') }}" data-speed="0.8"></div>
     <div class="container">
         <div class="row">
@@ -317,6 +323,6 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 @endsection

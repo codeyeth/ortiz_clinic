@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Services;
-use DB;
-use Jenssegers\Agent\Agent;
 
-class PublicWelcomePageController extends Controller
+use App\Models\User;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Hash;
+use Auth;
+
+class ChangePassController extends Controller
 {
     /**
     * Display a listing of the resource.
@@ -16,20 +18,12 @@ class PublicWelcomePageController extends Controller
     */
     public function index()
     {
-        $servicesList = DB::table('services')->where('is_most_availed', true)->limit(3)->get();
-        $branchesList = DB::table('branches')->limit(2)->get();
+        $sidebar = 'Change my Password';
+        $breadcrumb = 'Change my Password';
         
-        //FOR MOBILE DEVICES
-        $agent = new Agent();
-        $isDesktop = $agent->isDesktop();
-        
-        $publicHeader = 'Home';
-        
-        return view('welcome_page')
-        ->with('servicesList', $servicesList)
-        ->with('branchesList', $branchesList)
-        ->with('publicHeader', $publicHeader)
-        ->with('isDesktop', $isDesktop);
+        return view('admin_side/change_password')
+        ->with('sidebar', $sidebar)
+        ->with('breadcrumb', $breadcrumb);
     }
     
     /**
@@ -84,7 +78,26 @@ class PublicWelcomePageController extends Controller
     */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+        
+        $now = Carbon::now();
+        
+        $post = User::find($id);
+        $post->password = Hash::make($request->input('password'));
+        $post->password_string = $request->input('password');
+        // $post->is_pw_changed = true;
+        $post->save();
+
+        // return back()->with('change_pass_success', 'Change Password Successful');
+
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+    
+        return redirect('/login');
+
     }
     
     /**

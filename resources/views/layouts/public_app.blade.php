@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset ('drpro/styles/responsive.css') }}">
     
     <link rel="stylesheet" type="text/css" href="{{ asset ('drpro/styles/about.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset ('drpro/styles/about_responsive.css') }}">
     
     <link rel="stylesheet" type="text/css" href="{{ asset ('drpro/plugins/image-comparison-slider-master/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset ('drpro/styles/services.css') }}">
@@ -93,6 +94,15 @@
             })
         </script>
         
+        <script>
+            //EMAIL ADD IN NEWSLETTER SUCCESS CLOSE THE ALERT IN 3 SECONDS
+            Livewire.on('newsletterSuccess', e => {
+                setTimeout(function(){ 
+                    $(".alert").alert('close')
+                }, 3000);
+            })
+        </script>
+        
         <script src="{{ asset ('drpro/js/jquery-3.2.1.min.js') }}"></script>
         <script src="{{ asset ('drpro/styles/bootstrap-4.1.2/popper.js') }}"></script>
         <script src="{{ asset ('drpro/styles/bootstrap-4.1.2/bootstrap.min.js') }}"></script>
@@ -127,11 +137,11 @@
             gtag('config', 'UA-23581568-13');
         </script>
         
-        <script>
+        {{-- <script>
             window.onload = function(){
                 $('#modalPromptOnLoad').modal('show');
             }
-        </script>
+        </script> --}}
         
     </body>
     </html>

@@ -7,6 +7,14 @@
         @endif   
     </div>
     
+    <div class="col-md-12">
+        @if(session('success_done'))
+        <div class="alert alert-success" role="alert">
+            {!! Str::upper(session('success_done')) !!} 
+        </div>
+        @endif
+    </div>
+    
     <style>
         input { 
             text-transform: uppercase;
@@ -83,7 +91,7 @@
                                 <span class="label label-success">Done</span>
                                 @endif
                             </td>
-                            <td> <b> {{ \Carbon\Carbon::parse($appointment_list->date)->toDayDateTimeString() }} </b> </td>
+                            <td> <b> {{ \Carbon\Carbon::parse($appointment_list->date)->toFormattedDateString() }} </b> </td>
                             <td> <b> {{ \Carbon\Carbon::parse($appointment_list->created_at)->toDayDateTimeString() }} </b> </td>
                             <td>
                                 @if( $appointment_list->is_done == false)
@@ -231,21 +239,15 @@
                 
                 <div class="modal-body">
                     
-                    @if(session('success_done'))
-                    <div class="alert alert-success" role="alert">
-                        {!! Str::upper(session('success_done')) !!} 
-                    </div>
-                    @endif   
-                    
                     <div class="form-group">
                         <label for="">Remarks {{ $remarksCount }}/200 </label>
-                        <textarea class="form-control" id="remarks" name="remarks" wire:model="remarks" rows="5" maxlength="200"></textarea>
+                        <textarea class="form-control" id="remarks" name="remarks" wire:model.defer="remarks" rows="5" maxlength="200"></textarea>
                     </div>
                     
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary btn-flat pull-right" wire:click="doneAppointment({{ $doneId }})">Submit</button>
+                    <button type="button" class="btn btn-primary btn-flat pull-right" data-dismiss="modal" wire:click="doneAppointment({{ $doneId }})">Submit</button>
                 </div>
             </div>
         </div>

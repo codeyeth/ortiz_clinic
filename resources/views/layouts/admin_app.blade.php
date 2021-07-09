@@ -104,6 +104,7 @@
           @include('livewire_scripts.appointment_list_script')
           @include('livewire_scripts.branch_list_script')
           @include('livewire_scripts.services_list_script')
+          @include('livewire_scripts.user_management_script')
           
           <!-- jQuery 3 -->
           <script src="{{ asset ('/admin_template/bower_components/jquery/dist/jquery.min.js')}}"></script>

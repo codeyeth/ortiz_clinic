@@ -24,7 +24,7 @@
         
         <div>
             <div class="input-group">
-                <input type="text" placeholder="Search" class="form-control input-lg" id="search" wire:model="search" wire:keydown.escape="$set('search', '')" autofocus> 
+                <input type="text" placeholder="Search" class="form-control input-lg" id="search" wire:model.defer="search" wire:keydown.escape="$set('search', '')" autofocus> 
                 <span class="input-group-btn">
                     <button type="reset" class="btn btn-warning btn-flat btn-lg" wire:click="$set('search', '')">
                         Clear
@@ -149,12 +149,12 @@
                             
                             <div class="form-group">
                                 <label for="">Testimonial {{ $testimonialScriptCount }}/200 </label>
-                                <textarea class="form-control" id="description" name="description" wire:model="testimonialScript" rows="5" maxlength="200"></textarea>
+                                <textarea class="form-control" id="description" name="description" wire:model.defer="testimonialScript" rows="5" maxlength="200"></textarea>
                             </div>
                             
                             <div class="form-group">
                                 <label for="">Service Purchased</label>
-                                <select class="form-control" wire:model="servicePurchased">
+                                <select class="form-control" wire:model.defer="servicePurchased">
                                     <option disabled selected value="">Service</option>
                                     @if( count ($servicesList) > 0)
                                     @foreach( $servicesList as $services_list)
@@ -166,7 +166,7 @@
                             
                             <div class="form-group">
                                 <label>
-                                    <input type="checkbox" class="minimal" wire:model="isPublished">
+                                    <input type="checkbox" class="minimal" wire:model.defer="isPublished">
                                     Publish to Website
                                 </label>
                             </div>

@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\PublicWelcomePageController::class, 'index']);
 Route::get('/about_us', [App\Http\Controllers\AboutUsController::class, 'index']);
 Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index']);
-Route::get('/news', [App\Http\Controllers\NewsController::class, 'index']);
+// Route::get('/news', [App\Http\Controllers\NewsController::class, 'index']);
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index']);
 
 // ADMINISTRATOR SIDE
@@ -30,8 +29,12 @@ Route::get('/appointment_list', [App\Http\Controllers\AdminAppointmentListContro
 Route::get('/client_testimonial', [App\Http\Controllers\AdminClientTestimonialController::class, 'index']);
 Route::get('/branch', [App\Http\Controllers\AdminBranchController::class, 'index']);
 Route::get('/services_list', [App\Http\Controllers\AdminServicesController::class, 'index']);
-Route::get('/admin_blog', [App\Http\Controllers\AdminBlogController::class, 'index']);
+Route::get('/user_management', [App\Http\Controllers\UserManagementController::class, 'index']);
+Route::get('/change_password', [App\Http\Controllers\ChangePassController::class, 'index']);
+// Route::get('/admin_blog', [App\Http\Controllers\AdminBlogController::class, 'index']);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('change_pass', 'ChangePassController');

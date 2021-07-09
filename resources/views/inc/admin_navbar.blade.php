@@ -1,7 +1,7 @@
 <header class="main-header">
     
     <!-- Logo -->
-    <a href="/dashboard" class="logo">
+    <a href="{{ asset ('/') }}" class="logo" target="_blank">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>O</b>SC</span>
         <!-- logo for regular state and mobile devices -->
